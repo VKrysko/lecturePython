@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+<h2> Search result: </h2>
+<ul>
+    {% if contents|length %}
+    {% for content in contents%}
+         <li><a href="{{content}}">{{ content }}</a></li>
+    {% endfor %}
+    {% else %}
+    <li> Page not found, or not yet written </li>
+    {% endif %}
+</ul>
+<p><a href="{% url 'index' %}"> Home </a></p>
+
+        
+{% endblock %}

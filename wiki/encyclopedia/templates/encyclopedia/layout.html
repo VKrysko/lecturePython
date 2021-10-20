@@ -1,5 +1,5 @@
 {% load static %}
-
+<meta charset="UTF-8">
 <!DOCTYPE html>
 
 <html lang="en">
@@ -19,10 +19,10 @@
                     <a href="{% url 'index' %}">Home</a>
                 </div>
                 <div>
-                    <a href="Create_N_P">Create New Page</a>
+                    <a href="{% url 'add' %}">Create New Page</a>
                 </div>
                 <div>
-                    <a href="Random_P">Random Page</a>
+                    <a href="{% url 'random_page' %}">Random Page</a>
                    
                 </div>
                 {% block nav %}
