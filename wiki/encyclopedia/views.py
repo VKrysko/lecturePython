@@ -77,7 +77,7 @@ def search(requests):
     for wiki in wiki_list:
         wiki_list_lower.append(wiki.lower())
     if form['q'].lower() in wiki_list_lower:
-        return page(requests, form['q'])
+        return entri(requests, form['q'])
     elif wiki in wiki_list:
         for wiki in wiki_list:
             wiki_lower = wiki.lower()
