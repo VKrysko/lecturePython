@@ -1,0 +1,18 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+  <div class="product-list">
+      <h3> <a href="{% url 'index' %}">Categories</a>/{{ category.name }}</h3>
+      <div class="row">
+           {% for product in products %}
+            <div class="col-md-4">
+              <a href="{{ product.url }}">
+                  <img src="{{ MEDIA_URL }}{{ product.image.url }}" width="400" height="400">
+              </a><br>
+              <a href="{{ product.url }}">{{ product.name }}</a><br>
+              ${{ product.starting_bid }}
+            </div>
+           {% endfor %}
+     </div>
+  </div>
+{% endblock %}
