@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block body %}
-    <h2>{{ request.user.email }}</h2>
+    <h2 id = "user">{{ request.user.email }}</h2>
 
     <button class="btn btn-sm btn-outline-primary" id="inbox">Inbox</button>
     <button class="btn btn-sm btn-outline-primary" id="compose">Compose</button>
@@ -13,7 +13,9 @@
 
     <div id="emails-view">
     </div>
-
+    <div  id="emails-form">
+        
+    </div>
     <div id="compose-view">
         <h3>New Email</h3>
         <form id="compose-form">
@@ -27,11 +29,12 @@
                 <input class="form-control" id="compose-subject" placeholder="Subject">
             </div>
             <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
-            <input type="submit" class="btn btn-primary"/>
+            <input id="submit"  type="submit" class="btn btn-primary"/>
         </form>
     </div>
+    
 {% endblock %}
 
 {% block script %}
-    <script src="{% static 'mail/inbox.js' %}"></script>
+        <script src="{% static 'mail/inbox.js' %}"></script>
 {% endblock %}

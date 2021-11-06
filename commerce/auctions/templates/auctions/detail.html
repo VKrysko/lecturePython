@@ -1,6 +1,12 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-   
+<div class="detail">
+    <img src="{{ product.image.url }}" width="400" height="400">
+    <h1>{{ product.name }}</h1>
+    <h2><a href="/{{category.url }}">{{ product.category }}</a></h2>
+    <p class="bid">${{  product.starting_bid }}</p>
+    {{ product.description|linebreaks }}
+</div>
     
 {% endblock %}

@@ -6,10 +6,10 @@
       <div class="row">
            {% for product in products %}
             <div class="col-md-4">
-              <a href="{{ product.url }}">
+              <a href="{{ category.url}}/{{product.url }}">
                   <img src="{{ MEDIA_URL }}{{ product.image.url }}" width="400" height="400">
               </a><br>
-              <a href="{{ product.url }}">{{ product.name }}</a><br>
+              <a href="{{ category.url}}/{{product.url }}">{{ product.name }}</a><br>
               ${{ product.starting_bid }}
             </div>
            {% endfor %}

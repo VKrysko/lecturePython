@@ -92,13 +92,14 @@ def product_list(request, category_url=None):
 
 
 
-def detail(request, id, url):
+def detail(request, product_url,category_url ):
+    category = get_object_or_404(Category, url=category_url)
     product = get_object_or_404(Product,
-                                id=id,
-                                url=url,
+                                url=product_url,
                                 available=True)
     return render(request,
                   'auctions/detail.html',
-                  {'product': product})
+                  {'category': category,
+                   'product': product})
 
 
