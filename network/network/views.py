@@ -1,10 +1,10 @@
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
-from .models import User
+from .models import User, Post, like_Post, Follower
 
 
 def index(request):
@@ -61,3 +61,9 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "network/register.html")
+
+def post_list(request, id):
+    posts = get_object_or_404(Post, id=id,)
+    return render(request,
+                  'index',
+                  {'post': posts})

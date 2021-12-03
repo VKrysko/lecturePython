@@ -1,5 +1,13 @@
 {% extends "network/layout.html" %}
 
 {% block body %}
+{% if user.is_authenticated %}
+<h1>New post:</h1>
+    <form new_post="">
+        <input type="text", name="task">
+        <input type="submit">
+    </form>
+{% endif %}
     TODO
+    
 {% endblock %}
